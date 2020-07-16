@@ -73,6 +73,7 @@ import org.gwtbootstrap3.client.ui.TabListItem;
 import org.gwtbootstrap3.client.ui.TextBox;
 import org.gwtbootstrap3.client.ui.constants.IconSize;
 import org.gwtbootstrap3.client.ui.constants.IconType;
+import org.gwtbootstrap3.client.ui.constants.ModalBackdrop;
 import org.gwtbootstrap3.client.ui.html.Span;
 import org.gwtbootstrap3.client.ui.html.Strong;
 
@@ -752,6 +753,10 @@ public class EntryClassUi extends Composite implements Context {
 
         if (isUiDirty) {
             this.modal = new Modal();
+            modal.setClosable(false);
+            modal.setFade(true);
+            modal.setDataKeyboard(true);
+            modal.setDataBackdrop(ModalBackdrop.STATIC);
 
             ModalHeader header = new ModalHeader();
             header.setTitle(MSGS.warning());

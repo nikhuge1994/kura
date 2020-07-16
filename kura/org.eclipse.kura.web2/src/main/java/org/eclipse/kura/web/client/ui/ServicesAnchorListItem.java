@@ -23,6 +23,7 @@ import org.gwtbootstrap3.client.ui.ModalBody;
 import org.gwtbootstrap3.client.ui.ModalFooter;
 import org.gwtbootstrap3.client.ui.ModalHeader;
 import org.gwtbootstrap3.client.ui.constants.IconType;
+import org.gwtbootstrap3.client.ui.constants.ModalBackdrop;
 import org.gwtbootstrap3.client.ui.html.Span;
 
 import com.google.gwt.core.client.GWT;
@@ -76,6 +77,10 @@ public class ServicesAnchorListItem extends AnchorListItem {
                     || ServicesAnchorListItem.this.ui.isFirewallDirty()
                     || ServicesAnchorListItem.this.ui.isSettingsDirty()) {
                 final Modal modal = new Modal();
+                modal.setClosable(false);
+                modal.setFade(true);
+                modal.setDataKeyboard(true);
+                modal.setDataBackdrop(ModalBackdrop.STATIC);
 
                 ModalHeader header = new ModalHeader();
                 header.setTitle(MSGS.warning());
